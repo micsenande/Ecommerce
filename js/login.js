@@ -1,22 +1,28 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+// CUANDO TERMINE DE CARGARSE EL DOM
 document.addEventListener("DOMContentLoaded", function(e){
-    document.getElementById("ingresar").addEventListener("click", function (e){
-let password = document.getElementById("inputPassword");
-let email = document.getElementById("inputEmail");
-let camposCompletos = true;
 
+    // SE CREAR UN EVENTO, QUE ESCUCHA AL BOTÓN DE INGRESAR 
+    document.getElementById("buttonIngresoLogin").addEventListener("click", function (e) {
 
-if (password.value === '' || email.value === ''){
-            camposCompletos = false;
-            alert("Debes ingresar los datos!");
-        }
+    // EXTRAEMOS LOS DATOS
+    let inputEmail = document.getElementById("inputEmailLogin");
+    let inputPassword = document.getElementById("inputPasswordLogin");
+        
+    // VERIFICAMO QUE LOS CAMPOS ESTÉN COMPLETOS
+    let camposCompletos = true;
+    if (inputEmail.value === '' || inputPassword.value === ''){
+        camposCompletos = false;
+        alert("Debes ingresar tus datos para continuar.");
+    }
 
+        if (camposCompletos) { // SI LOS DATOS ESTÁN COMPLETOS
+        // GUARDAMOS EN EL STORAGE LA INFORMACION INGRESADA
+        localStorage.setItem('user-logged', JSON.stringify({ email: inputEmail.value }));
+        window.location = 'home.html';
+    }
 
-if (camposCompletos){
-            window.location = 'index.html';
-        }
   });
 
 });
+
+
