@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.dropdown-toggle::after {
+    margin-top: 0.6rem;
+}
+
+#dropdownMenuButton {
+    display: flex;
+}
+
+#user-identifier {
+    margin-bottom: 0px;
+}
+
+#user-container {
+    display: none;
+}
+

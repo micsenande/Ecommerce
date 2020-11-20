@@ -27,15 +27,22 @@
         font-size: 3.5rem;
       }
     }
+
+    .dropdown-toggle::after {
+    margin-top: 0.6rem;
+}
+
+    
   </style>
+  <head>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/user-logged.css" />
 </head>
 
 <body>
 
-    <!-- BARRA DE NAVEGACION -->
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
 
@@ -59,34 +66,67 @@
 
   </nav>
 
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+<div class="container p-5">
+<h2>INGRESE SUS DATOS:</h2>
+<br>
+<form id="datos-usuario" class="needs-validation" novalidate>
+<div class="form">
     </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Nombre:</label>
+        <input type="text" class="form-control" id="nombres" placeholder="Ingrese su nombre" required>
+        <div class="invalid-feedback">
+            Por favor, ingrese su nombre.
+        </div>
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Apellidos:</label>
+        <input type="text" class="form-control" id="apellidos" placeholder="Ingrese sus apellidos" required>
+        <div class="invalid-feedback">
+            Por favor, ingrese sus apellidos.
+        </div>
     </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Edad:</label>
+        <input type="number" class="form-control" id="edad" placeholder="Ingrese su edad" required>
+        <div class="invalid-feedback">
+            Por favor, ingrese su edad.
+        </div>
+    </div> 
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Pais:</label>
+        <input type="text" class="form-control" id="Pais" placeholder="Ingrese su pais" required>
+        <div class="invalid-feedback">
+            Por favor, ingrese su país de residencia.
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Email:</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input type="email" class="form-control" id="email" placeholder="Email"
+                aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese su casilla de correo.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="telefono">Teléfono:</label>
+      <input type="number" class="form-control" id="telefono" placeholder="Ingrese su número de teléfono" required>
+      <div class="invalid-feedback">
+          Por favor ingrese su número de teléfono.
+      </div>
   </div>
+</div>
+<div style="margin-right: 3px; text-align: center;">
+<button class="btn btn-primary" type="submit">Guardar</button>
+</form>
+</div>
+
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
